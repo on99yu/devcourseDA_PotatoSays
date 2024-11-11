@@ -4,6 +4,11 @@ use LOL_data;
 
 drop table if exists `champion_participant_id`;
 
+CREATE TABLE `champion_dict`(
+	`champion_id` INT NOT NULL,
+	`champion_name` VARCHAR(20) NULL
+)
+
 CREATE TABLE `champion_participant_id` (
 	`match_id`	BIGINT	NOT NULL,
 	`participant_id`	INT	NULL,
