@@ -10,20 +10,18 @@ import plotly.graph_objects as go
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 server = app.server
 
-# 데이터 로드
+# 챔피언, 역할군 별 성능 그래프
 with open("dashboard_data/champion_stats.pkl", "rb") as f:
     champion_dataframes = pickle.load(f)
-
 with open("dashboard_data/tag_avg_stats.pkl", "rb") as f:
     tag_avg_dataframes = pickle.load(f)
-
+# 포지션별 챔피언 승률, 픽률
 with open("dashboard_data/champion_win_pick_rate.pkl", "rb") as f:
     champion_win_pick_rate = pickle.load(f)
-
-# 챔피언별 역할군 승률 데이터 로드
+# 챔피언별 챔피언 상대 승률
 with open("dashboard_data/champion_winrate_by_role.pkl", "rb") as f:
     champion_winrate_by_role = pickle.load(f)
-
+# 챔피언별 상대 역할군에 따른 승률
 with open("dashboard_data/winrate_per_champion.pkl", "rb") as f:
     winrate_per_champion = pickle.load(f)
 
